@@ -4,19 +4,21 @@
 
 #list
 TIMES = [["Crofton Downs", 7],["Ngaio", 2],["Awarua St", 2],["Simla Cres", 2],["Box Hill", 1],["Kandallah", 2],["Raroa", 3],["Johnsonville", 2]]
-arrival_times = []
+#arrival_times = []
 def time_calculation(i):
     print("-----------------")
     hour = i // 1
     minute = i % 1 * 100
-    TIMES.insert(0, ["Wellington", minute])
+    print(minute)
+    TIMES.insert(0, ["Wellington", 0])
+    #print(TIMES[0][1])
     for time in TIMES:
         #print(time)
         minute += time[1]
         if minute >= 60:
             hour += 1
             minute -= 60
-        arrival_times.append(minute)
+        #arrival_times.append(minute)
         if minute < 9:
             print("{}  {:.0f}:0{:.0f}".format(time[0], hour, minute), end = ". ")
         else:
